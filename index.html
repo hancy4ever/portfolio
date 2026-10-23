@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="个人艺术与数字创作作品集" />
+    <title>Visual Artist · Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <nav aria-label="主导航">
+        <a href="#top">首页</a><a href="#works">作品</a>
+      </nav>
+      <a class="contact-pill" href="mailto:19557168352@163.com">联系我 <span>↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="intro-hero" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <h1 id="intro-title"><span class="intro-line">你好，我是一名</span><span class="intro-line">独立开发者和交互设计师</span></h1>
+          <nav class="intro-paths" aria-label="选择作品方向">
+            <button type="button" data-project-view="interactive"><span>01</span>从游戏开始看 <b>↘</b></button>
+            <button type="button" data-project-view="art"><span>02</span>从绘画&amp;建模开始看 <b>↘</b></button>
+          </nav>
+        </div>
+      </section>
+
+      <section class="works" id="works">
+        <div class="filters reveal" role="tablist" aria-label="作品分类">
+          <button class="filter active" data-filter="interactive" role="tab" aria-selected="true">游戏与交互 <sup id="count-interactive">00</sup></button>
+          <button class="filter" data-filter="art" role="tab" aria-selected="false">绘画&amp;建模 <sup id="count-art">00</sup></button>
+        </div>
+        <div class="project-grid" id="project-grid" aria-live="polite"></div>
+      </section>
+
+    </main>
+
+    <footer id="contact">
+      <p>LET'S CREATE SOMETHING<br /><em>UNFORGETTABLE.</em></p>
+      <a href="mailto:19557168352@163.com">19557168352@163.com ↗</a>
+      <div class="footer-meta"><span>© 2026</span><span>DESIGNED WITH CURIOSITY</span><a href="#top">回到顶部 ↑</a></div>
+    </footer>
+
+    <dialog class="lightbox" id="lightbox" aria-label="作品大图查看器">
+      <div class="lightbox-layout">
+        <div class="lightbox-content" id="lightbox-canvas">
+          <div class="lightbox-gallery" id="lightbox-gallery" aria-label="作品图片"></div>
+          <section class="lightbox-media lightbox-video-wrap" id="lightbox-video-wrap" aria-label="作品视频">
+            <div class="lightbox-video-content">
+              <p class="lightbox-video-prompt">点击播放观看游戏实机演示</p>
+              <iframe id="lightbox-video" title="B站视频播放器" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </section>
+        </div>
+        <aside class="lightbox-sidebar">
+          <div class="lightbox-sidebar-head">
+            <span>作品详情</span>
+            <button type="button" data-lightbox-action="close" aria-label="关闭大图">×</button>
+          </div>
+          <div class="lightbox-sidebar-copy">
+            <h2 id="lightbox-title">作品名称</h2>
+            <p id="lightbox-description"></p>
+          </div>
+          <div class="lightbox-tools">
+            <button type="button" data-lightbox-action="zoom-out" aria-label="缩小">−</button>
+            <button type="button" data-lightbox-action="reset" aria-label="恢复原始缩放"><span id="lightbox-zoom">100%</span></button>
+            <button type="button" data-lightbox-action="zoom-in" aria-label="放大">＋</button>
+            <button type="button" data-lightbox-action="fullscreen" aria-label="全屏查看">⛶</button>
+          </div>
+          <div class="lightbox-actions" id="lightbox-actions"></div>
+          <p class="lightbox-scroll-note" id="lightbox-scroll-note">向下滚动观看视频 ↓</p>
+        </aside>
+      </div>
+    </dialog>
+
+    <script src="projects.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
